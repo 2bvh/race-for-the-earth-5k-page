@@ -4,83 +4,119 @@
     <head>
         <meta charset="UTF-8">
         <title>Race for the Earth 5K</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
-        <div class="page-wrap">
-            <div class="header"> <!--Based off W3schools-->
-                <div class="logo">
-                    <span>Logo</span>
-                    <p>saving the world a mile at a time</p>
-                </div> 
-                <div class="navbar">
-                    <ul class="nav-links">
-                        <li class="nav-link"><a href="#">Race Information</a></li>
-                        <li class="nav-link"><a href="#">Our Cause</a></li>
-                        <li class="nav-link"><a href="#">Course Map</a></li>
-                        <li class="nav-link"><a href="#">Volunteer</a></li>
-                        <li class="nav-link"><a href="#">FAQs</a></li>
-                        <li class="nav-link"><a href="#">Sponsors</a></li>
-                        <li class="nav-link"><a href="#">Results</a></li>
-                    </ul>    
-                </div>
+        <div class="page-wrap"> 
+            <nav class="navbar">
+                <span class="navbar-toggle" id="js-navbar-toggle">
+                    <i class="fa fa-bars"></i>
+                </span>
+                <a href="#" class="logo">
+                    <img id="logo" src="data:image/png;base64,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" alt="Race for the Earth 5k Logo">
+                </a>
+                <ul class="nav-links" id="js-menu">
+                    <li>
+                        <a href="#" class="nav-link">Race Information</a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link">Our Cause</a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link">Course Map</a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link">Volunteer</a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link">FAQs</a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link">Sponsors</a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link">Results</a>
+                    </li>
+                </ul>    
+            </nav>
+            <div class="btn-wrap">
+                <button type="button" name="donate" class="donate head-btn">Donate</button>
+                <button type="button" name="sign-up" class="sign-up head-btn">Sign-Up</button>
             </div>
             <div class="jumbotron"><!--Tomoka Marathon Jumbotron-->
-
-            </div>
-            <div class="cause">
-                <h2>Our Cause</h2>
-                <p>xxxxxxx</p>
-            </div>
-            <div class="sign-up">
-
-            </div>
-            <div class="info">
-                <div class="place info-section">
-                    <h3>Place</h3>
-                    <p>Start Line: xxxxxx</p>
-                    <p>Finish Line: xxxxxx</p>
-                </div>
-                <div class="description info-section">
-                    <h3>Description</h3>
-                    <p>xxxxxxxxxx</p>
-                </div>
-                <div class="awards info-section">
-                    <h3>Awards and Prizes</h3>
-                    <p>xxxxxxx</p>
-                </div>
-                <div class="packets info-section">
-                    <h3>Packet Pick Up</h3>
-                    <p>xxxxxxx</p>
-                </div>
-                <div class="parking info-section">
-                    <h3>Race Day Parking</h3>
-                    <p>xxxxxxx</p>
-                </div>
-                <div class="results info-section">
-                    <h3>Results</h3>
-                    <p>xxxxxxx</p>
-                </div>
-                <div class="course-map info-section">
-                    <h3>Course Map</h3>
-                    <p>xxxxxxx</p>
-                </div>
-                <div class="sponsors info-section">
-                    <h3>Sponsors</h3>
-                    <p>xxxxxxx</p>
+                <h1 class="jumbo-head">Race for the Earth 5k</h1>
+                <img class="jumbo-img" src="https://d368g9lw5ileu7.cloudfront.net/races/races-11xxx/11700/raceBanner-GP0aA3gC-bB5f9I.jpg" alt="Minneapolis Skyline">
+                <div class="jumbo-info">
+                    <div class="date">Sat October 21, 2020</div>
+                    <p class="jumbo-address">Boom Island, MN US 55414</p>
                 </div>
             </div>
+            <main>
+                <div class="cause">
+                    <h2>Our Cause</h2>
+                    <p>Our mission with this 5k is to do our part in the fight against global warming and climate catastrophe</p>
+                    <p>By signing-up to run or donating, you are taking part in this fight alongside us.</p>
+                </div>
+                <div class="border"></div>
+                <div class="info">
+                    <div class="place info-section">
+                        <h3>Place & Time</h3>
+                        <p>Start Line: Boom Island Park, Minneapolis MN</p>
+                        <p>Finish Line: Boom Island Park, Minneapolis MN</p>
+                        <p>Time: TBD</p>
+                    </div>
+                    <div class="border"></div>
+                    <div class="description info-section">
+                        <h3>Description</h3>
+                        <p>This race will take you on a scenic stroll through some of Minneapolis' greatest landmarks.</p>
+                        <p>During the run, you will run through West River Park as the leaves change, cross partway over the Hennepin Bridge to historic Nicollette Island and finally loop back to Boom Island for the finish and a wonderful view of the skyline.</p>
+                    </div>
+                    <div class="border"></div>
+                    <div class="awards info-section">
+                        <h3>Awards and Prizes</h3>
+                        <p>TBD</p>
+                    </div>
+                    <div class="border"></div>
+                    <div class="packets info-section">
+                        <h3>Packet Pick Up</h3>
+                        <p>Boom Island, February 30th</p>
+                    </div>
+                    <div class="border"></div>
+                    <div class="parking info-section">
+                        <h3>Race Day Parking</h3>
+                        <p>Parking can be found on the streets nearby. We will work to find other places.</p>
+                    </div>
+                    <div class="border"></div>
+                    <div class="results info-section">
+                        <h3>Results</h3>
+                        <p>Results</p>
+                    </div>
+                    <div class="border"></div>
+                    <div class="course-map info-section">
+                        <h3>Course Map</h3>
+                        <p>xxxxxxx</p>
+                    </div>
+                    <div class="border"></div>
+                    <div class="sponsors info-section">
+                        <h3>Sponsors</h3>
+                        <p>Oneshot Media, Kermit the Frog</p>
+                    </div>
+                </div>
+            </main>
             <footer>
-                <span class="logo-foot"></span>
+                <img class="logo-foot" src="data:image/png;base64,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" alt="logo">
                 <ul class="foot-links">
-                        <li class="foot-link"><a href="#">Race Information</a></li>
-                        <li class="foot-link"><a href="#">Our Cause</a></li>
-                        <li class="foot-link"><a href="#">Course Map</a></li>
-                        <li class="foot-link"><a href="#">Volunteer</a></li>
-                        <li class="foot-link"><a href="#">FAQs</a></li>
-                        <li class="foot-link"><a href="#">Sponsors</a></li>
-                        <li class="foot-link"><a href="#">Results</a></li>
+                        <li><a class="foot-link" href="#">Race Information</a></li>
+                        <li><a class="foot-link" href="#">Our Cause</a></li>
+                        <li><a class="foot-link" href="#">Course Map</a></li>
+                        <li><a class="foot-link" href="#">Volunteer</a></li>
+                        <li><a class="foot-link" href="#">FAQs</a></li>
+                        <li><a class="foot-link" href="#">Sponsors</a></li>
+                        <li><a class="foot-link" href="#">Results</a></li>
                     </ul>
             </footer>
         </div>
+        <script type="text/javascript" src="js.js"></script>
     </body>
 </html>
